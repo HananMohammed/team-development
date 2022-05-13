@@ -1,0 +1,14 @@
+/laravel-topics/node_modules
+/laravel-topics/public/hot
+/laravel-topics/public/storage
+/laravel-topics/storage/*.key
+/laravel-topics/vendor
+/laravel-topics/.env
+/laravel-topics/.env.backup
+/laravel-topics/.phpunit.result.cache
+/laravel-topics/Homestead.json
+/laravel-topics/Homestead.yaml
+/laravel-topics/npm-debug.log
+/laravel-topics/yarn-error.log
+/.idea
+/.vscode
