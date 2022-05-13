@@ -3,18 +3,18 @@
 ## About Us
 We are Backend Developers Seeks to Develop our selves in new and advanced topics in : 
 
--php8 and laravel9
+- php8 and laravel9
 
--Enhance our selves in Problem Solving
+- Enhance our selves in Problem Solving
 
 ## Laravel Topics
 
 ### Getting Started
 
--installation & configuration
+- installation & configuration
 
-###Packages
+### Packages
 
--Laravel Breeze
+- Laravel Breeze
 
 ## Problem Solving Topics
