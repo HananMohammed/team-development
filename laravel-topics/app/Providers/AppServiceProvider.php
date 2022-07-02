@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Services\Contracts\MessageService;
 use App\Services\Sql\EmailMessageService;
 use App\Services\Sql\TextMessageService;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Cashier\Cashier;
 
@@ -34,6 +35,13 @@ class AppServiceProvider extends ServiceProvider
 //                    $app->make(TextMessageService::class),
 //                ];
 //            });
+
+        $this->app->resolving(EmailMessageService::class, function ($transistor, $app) {
+            // Called when container resolves objects of type "EmailMessageService"...
+            Log::debug("Resolve Event on EmailMessageService Fired !!!!!!!!!!!!!!!!!!");
+        });
+
+
 
     }
 

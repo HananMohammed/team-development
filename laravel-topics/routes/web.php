@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Psr\Container\ContainerInterface;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function ( ) {
-
-    return view('welcome');
-});
+//Route::get('/', function ( ) {
+//
+//    return view('welcome');
+//});
 //strip-webhook
+Route::get('/', function (ContainerInterface $container) {
+    $service = $container->get(\App\Services\Sql\TextMessageService::class);
+    $service->send();
+    return  'done';
+    //
+});
