@@ -15,6 +15,11 @@ We are Backend Developers Seeks to Develop our selves in new and advanced topics
 
 - installation & configuration
 
+### Architecture Concepts
+
+- Request Lifecycle
+- Service Container
+
 ### Packages
 
 - Laravel Breeze
