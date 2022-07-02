@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Psr\Container\ContainerInterface;
@@ -17,6 +18,14 @@ use Inertia\Inertia;
 |
 */
 
+Route::get('test/{id}', function ($id){
+    dd($id);
+});
+
+Route::resource('users-test', UserController::class);
+Route::get('users/{user}', function ($user){
+    dd($user);
+});
 
 Route::get('/send', function (ContainerInterface $container) {
     $service = $container->get(\App\Services\Sql\TextMessageService::class);
@@ -24,17 +33,21 @@ Route::get('/send', function (ContainerInterface $container) {
     return  'done';
     //
 });
-//
-    Route::get('/', function () {
-        return Inertia::render('Welcome', [
-            'canLogin' => Route::has('login'),
-            'canRegister' => Route::has('register'),
-            'laravelVersion' => Application::VERSION,
-            'phpVersion' => PHP_VERSION,
-        ]);
-    });
-//
-    Route::get('/dashboard', function () {
-        return Inertia::render('Dashboard');
-    })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/profile', function (){
+    return  view('profile');
+});
+////
+//    Route::get('/', function () {
+//        return Inertia::render('Welcome', [
+//            'canLogin' => Route::has('login'),
+//            'canRegister' => Route::has('register'),
+//            'laravelVersion' => Application::VERSION,
+//            'phpVersion' => PHP_VERSION,
+//        ]);
+//    });
+////
+//    Route::get('/dashboard', function () {
+//        return Inertia::render('Dashboard');
+//    })->middleware(['auth', 'verified'])->name('dashboard');
+//
