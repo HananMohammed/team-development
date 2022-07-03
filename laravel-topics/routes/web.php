@@ -37,6 +37,8 @@ Route::get('/send', function (ContainerInterface $container) {
 Route::get('/profile', function (){
     return  view('profile');
 });
+
+Route::get('cache/{id}', fn($id)=>\Illuminate\Support\Facades\Cache::get('user:'.$id));
 ////
 //    Route::get('/', function () {
 //        return Inertia::render('Welcome', [
