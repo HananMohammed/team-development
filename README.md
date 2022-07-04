@@ -19,6 +19,12 @@ We are Backend Developers Seeks to Develop our selves in new and advanced topics
 
 - Request Lifecycle
 - Service Container
+- Service Providers
+- Facades
+
+###The Basics
+- Routing
+
 
 ### Packages
 

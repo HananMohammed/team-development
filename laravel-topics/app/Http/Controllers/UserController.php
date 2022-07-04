@@ -6,6 +6,17 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+    public function users(Request $request)
+    {
+        if ($request->isMethod('post')){
+            //store code here
+        }else{
+            //$request->isMethod('get')
+            //get data code here //
+        }
+
+    }
     /**
      * Display a listing of the resource.
      *

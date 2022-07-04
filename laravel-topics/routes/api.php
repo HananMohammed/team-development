@@ -35,3 +35,6 @@ Route::get('/streamLab', function (){
 
     return StreamLab::doTask();
 });
+
+
+Route::match(['get', 'post'], '/users', [\App\Http\Controllers\UserController::class, 'users']);

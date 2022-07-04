@@ -39,6 +39,50 @@ Route::get('/profile', function (){
 });
 
 Route::get('cache/{id}', fn($id)=>\Illuminate\Support\Facades\Cache::get('user:'.$id));
+
+Route::redirect('/here', '/send', 301);
+Route::permanentRedirect('/hi', '/send', 301);
+
+Route::view('/welcome', 'welcome', ['id' =>'1']);
+Route::get('/home/{id}', fn($id) => [
+    'id' => $id
+])->where('id', '[0-9]+');
+Route::get('/posts/{post}/comments/{comment}', function ($postId, $commentId) {
+    return [
+        'post_id' => $postId,
+        'comment_id' => $commentId
+    ];
+});
+
+//Optional Parameters
+Route::get('/user/{name?}', function ($name = 'John') {
+    return $name;
+});
+
+
+//Regular Expression Constraints
+/*Route::get('/user/{id}/{name}', function ($id, $name) {
+    return [
+        'id' => $id,
+        'name' => $name
+    ];
+})->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+']);*/
+
+// regular expression patterns have helper methods that allow you to quickly add pattern constraints to your routes
+Route::get('/user/{id}/{name}', function ($id, $name) {
+    return [
+        'id' => $id,
+        'name' => $name
+    ];
+})->whereNumber('id')->whereAlphaNumeric('name');
+
+Route::get('/user/{id}', function ($id) {
+    return [
+        'id' => $id,
+    ];
+})->whereUuid('id');
+
+//
 ////
 //    Route::get('/', function () {
 //        return Inertia::render('Welcome', [
