@@ -115,10 +115,15 @@ Route::name('admin.')->group(function () {
     })->name('users');
 });
 
-Route::middleware(['throttle:uploads'])->group(function (){
+Route::middleware(['throttle:uploads', 'terminate'])->group(function (){
     Route::get('uploads', fn()=>dd("UP"));
 });
 
+Route::middleware(['terminate'])->group(function (){
+    Route::get('terminate', function (){
+        return "OKKKKKKKKKKKKKKKKKKKKK";
+    });
+});
 //
 ////
 //    Route::get('/', function () {
