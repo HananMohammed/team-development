@@ -28,8 +28,9 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         //********************************************************
-        Route::pattern('id', '[0-9]+');
+/*        Route::pattern('id', '[0-9]+');
         Route::model('user', User::class);
+        */
         Route::resourceVerbs([
             'create' => 'test-create',
             'edit' => 'test-edit'
@@ -46,6 +47,9 @@ class RouteServiceProvider extends ServiceProvider
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
         });
+        //******************************************
+
+
     }
 
     /**
@@ -58,5 +62,12 @@ class RouteServiceProvider extends ServiceProvider
         RateLimiter::for('api', function (Request $request) {
             return Limit::perMinute(60)->by($request->user()?->id ?: $request->ip());
         });
+
+        RateLimiter::for('uploads', function (Request $request) {
+            return $request->user()
+                ? Limit::perMinute(100)->by($request->user()->id)
+                : Limit::perMinute(1)->by($request->ip());
+        });
     }
+
 }
