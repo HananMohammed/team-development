@@ -32,4 +32,9 @@ We are Backend Developers Seeks to Develop our selves in new and advanced topics
 
 - Laravel Breeze
 
+
+## Vue js Revisions
+### Learn Vue 3: Step by Step
+- Absolute Basics
+
 ## Problem Solving Topics
