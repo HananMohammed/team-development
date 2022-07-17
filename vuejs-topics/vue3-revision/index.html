@@ -1,51 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vuejs 3</title>
-    <style>
-        html,
-        body {
-        height: 100%;
-        }
-
-        body {
-        display: grid;
-        place-content: center;
-        }
-
-        .text-red {
-        color: red;
-        }
-
-        .text-green {
-        color: green;
-        }
-    </style>
 </head>
-<body>
+<body class="h-full grid place-items-center">
     <div id="app">
-        <button :class="active ? 'text-red' : 'text-green'" @click="toggle" >
-            Click me !
-        </button>
+        <section>
+            <h6 class="font-bold mb-2">Assignment</h2>
+            <ul>
+                <li v-for="assignment in assignments.filter(a=>!a.complete)" :key="assignment.id">
+                    <label>{{assignment.name}} <input type="checkbox" v-model="assignment.complete"></label>
+                </li>
+            </ul>
+        </section>
+        <section v-show="assignments.filter(a=>a.complete).length">
+            <h6 class="font-bold mb-2">Completed</h2>
+            <ul>
+                <li v-for="assignment in assignments.filter(a=>a.complete)"  :key="assignment.id">
+                    <label>{{assignment.name}} <input type="checkbox" v-model="assignment.complete"></label>
+                </li>
+            </ul>
+        </section>
     </div>
     <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         const { createApp } = Vue
-        createApp({
+        let app = {
         data() {
             return {
-            active: false 
+            assignments :[
+                {name:'Arabic assignment ', complete:false, id:1},
+                {name:'Science assignment ', complete:false, id:2},
+                {name:'English assignment ', complete:false, id:3},
+            ]
             }
         },
         methods: {
-            toggle() {
-                this.active = !this.active;
-            },
         },
-        }).mount('#app')
+        };
+
+        createApp(app).mount('#app')
 </script>
     </script>
 </body>
