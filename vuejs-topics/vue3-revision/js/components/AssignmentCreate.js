@@ -8,9 +8,6 @@ export default {
                 </div>
             </form>
     `,
-    props: {
-        assignments: Array
-    },
     data() {
         return {
             newAssignment: ''
@@ -18,13 +15,7 @@ export default {
     },
     methods: {
         add() {
-            console.log(this.assignments)
-            this.assignments.push({
-                name: this.newAssignment,
-                complete: false,
-                id: this.assignments.length + 1
-            });
-
+            this.$emit('add', this.newAssignment)
             this.newAssignment = '';
         }
     },

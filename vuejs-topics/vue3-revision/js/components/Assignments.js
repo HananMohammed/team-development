@@ -11,7 +11,7 @@ export default {
         <div class="space-y-8"> 
             <assignment-list v-if="filers.inProgress" :assignments="filers.inProgress" title="In progress"></assignment-list>
             <assignment-list v-if="filers.completed"  :assignments = "filers.completed" title = "Completed"></assignment-list>
-            <assignment-create  :assignments="assignments"></assignment-create>
+            <assignment-create @add="add"></assignment-create>
         </div>
     `,
     data() {
@@ -24,6 +24,13 @@ export default {
         }
     },
     methods: {
+        add(name) {
+            this.assignments.push({
+                name: name,
+                complete: false,
+                id: this.assignments.length + 1
+            });
+        }
     },
     computed: {
         filers() {
