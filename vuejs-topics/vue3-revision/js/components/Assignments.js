@@ -1,20 +1,17 @@
 import AssignmentList from "./AssignmentList.js";
+import AssignmentCreate from "./AssignmentCreate.js";
 
 export default {
     name: 'Assignments',
     components: {
-        AssignmentList
+        AssignmentList,
+        AssignmentCreate
     },
     template: `
         <div class="space-y-8"> 
             <assignment-list v-if="filers.inProgress" :assignments="filers.inProgress" title="In progress"></assignment-list>
             <assignment-list v-if="filers.completed"  :assignments = "filers.completed" title = "Completed"></assignment-list>
-            <form @submit.prevent="add">
-                <div class="border border-gray-600 text-black">
-                    <input v-model="newAssignment" type="text" placeholder="new assignment....." class="p-3">
-                    <button type="submit" class="bg-white p-3 border-l">Add</button>
-                </div>
-            </form>
+            <assignment-create  :assignments="assignments"></assignment-create>
         </div>
     `,
     data() {
@@ -24,19 +21,9 @@ export default {
                 {name: 'Science assignment ', complete: false, id: 2},
                 {name: 'English assignment ', complete: false, id: 3},
             ],
-            newAssignment:''
         }
     },
     methods: {
-        add(){
-            this.assignments.push({
-                name: this.newAssignment,
-                complete: false,
-                id: this.assignments.length + 1
-            });
-
-            this.newAssignment = '';
-        }
     },
     computed: {
         filers() {
