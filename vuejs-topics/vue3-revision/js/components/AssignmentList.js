@@ -1,26 +1,21 @@
+import Assignment from "./Assignment.js";
 export default {
-    name: 'AppButton',
-    template: `<button :class="{
-                'border rounded px-5 py-2 disabled:cursor-not-allowed':true,
-                'bg-blue-200 hover:bg-blue-400': type === 'primary',
-                'bg-purple-200 hover:bg-purple-400': type === 'secondary',
-                'is-loading': processing
-                }" :disabled="processing"><slot /></button>`,
+    components:{
+        'assignment':Assignment
+    },
+    template: `
+        <section v-show="assignments.length">
+            <p class="font-bold mb-2">{{title}}</p>
+            <ul>
+                <assignment  v-for="assignment in assignments" :key="assignment.id" :assignment="assignment"></assignment>
+            </ul>
+        </section>
+
+    `,
     props: {
-        type: {
-            type: String,
-            default: 'primary'
-        },
-        processing:{
-            type:Boolean,
-            default: false
-        }
+        assignments:Array,
+        title: String
     },
-    data() {
-        return {
-        }
-    },
-    mounted() {
-        return alert("HEYYYYYYYY")
-    }
+
+
 }

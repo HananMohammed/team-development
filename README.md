@@ -36,5 +36,6 @@ We are Backend Developers Seeks to Develop our selves in new and advanced topics
 ## Vue js Revisions
 ### Learn Vue 3: Step by Step
 - Absolute Basics
+- Vue Components
 
 ## Problem Solving Topics

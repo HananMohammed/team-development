@@ -1,13 +1,11 @@
-<script>
-import Assignments from "./components/Assignments";
+import Assignments from "./components/Assignments.js";
 export default {
-  name:'App',
-  template: `
+    name:'App',
+    template: `
         <assignments />
     `,
 
-  components: {
-    'assignments': Assignments
-  }
+    components: {
+        'assignments': Assignments
+    }
 }
-</script>

@@ -1,16 +1,16 @@
-<template>
-    <div>
-      <assignment-list :assignments="inProgressAssignments" title="In progress"></assignment-list>
-      <assignment-list :assignments = "completedAssignments" title = "Completed"></assignment-list>
-    </div>
-</template>
-<script>
-import AssignmentList from "./AssignmentList";
+
+import AssignmentList from "./AssignmentList.js";
 export default {
   name: 'Assignments',
   components:{
     AssignmentList
   },
+    template:`
+        <div class="space-y-8"> 
+            <assignment-list v-if="filers.inProgress" :assignments="filers.inProgress" title="In progress"></assignment-list>
+            <assignment-list v-if="filers.completed"  :assignments = "filers.completed" title = "Completed"></assignment-list>
+        </div>
+    `,
   data() {
     return {
       assignments: [
@@ -21,15 +21,12 @@ export default {
     }
   },
   computed:{
-    inProgressAssignments() {
-      this.assignments.filter(assignment => !assignment.complete)
-      console.log(this.assignments)
-    },
-
-    completedAssignments() {
-      this.assignments.filter(assignment => assignment.complete)
-      console.log(this.assignments)
+    filers(){
+        return{
+            inProgress: this.assignments.filter(assignment => !assignment.complete),
+            completed: this.assignments.filter(assignment => assignment.complete)
+        }
     }
   }
 }
-</script>
+
