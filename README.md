@@ -35,7 +35,9 @@ We are Backend Developers Seeks to Develop our selves in new and advanced topics
 
 ## Vue js Revisions
 ### Learn Vue 3: Step by Step
-- Absolute Basics
-- Vue Components
+- Section1: Absolute Basics
+- Section2: Vue Components
+- Section3: Event Handling
+- Section4: Beynod the basics
 
 ## Problem Solving Topics
