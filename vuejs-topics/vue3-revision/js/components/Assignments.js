@@ -17,9 +17,9 @@ export default {
     data() {
         return {
             assignments: [
-                {name: 'Arabic assignment ', complete: false, id: 1},
-                {name: 'Science assignment ', complete: false, id: 2},
-                {name: 'English assignment ', complete: false, id: 3},
+                {name: 'Arabic assignment ', complete: false, id: 1, tag:"arabic"},
+                {name: 'Science assignment ', complete: false, id: 2, tag:"science"},
+                {name: 'English assignment ', complete: false, id: 3, tag:"english"},
             ],
         }
     },
