@@ -16,11 +16,7 @@ export default {
     `,
     data() {
         return {
-            assignments: [
-                {name: 'Arabic assignment ', complete: false, id: 1, tag:"arabic"},
-                {name: 'Science assignment ', complete: false, id: 2, tag:"science"},
-                {name: 'English assignment ', complete: false, id: 3, tag:"english"},
-            ],
+            assignments: [],
         }
     },
     methods: {
@@ -39,6 +35,13 @@ export default {
                 completed: this.assignments.filter(assignment => assignment.complete)
             }
         }
+    },
+    created(){
+        fetch("http://localhost:3001/assignments")
+            .then(response=>response.json())
+            .then(assignments=>{
+                this.assignments = assignments
+            })
     }
 }
 

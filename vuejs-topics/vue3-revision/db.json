@@ -1,0 +1,28 @@
+{
+  "assignments": [
+    {
+      "name": "Arabic assignment ",
+      "complete": false,
+      "id": 1,
+      "tag": "arabic"
+    },
+    {
+      "name": "Science assignment ",
+      "complete": false,
+      "id": 2,
+      "tag": "science"
+    },
+    {
+      "name": "English assignment ",
+      "complete": false,
+      "id": 3,
+      "tag": "english"
+    },
+    {
+      "name": "Programming",
+      "complete": false,
+      "id": 4,
+      "tag": "programming"
+    }
+  ]
+}
