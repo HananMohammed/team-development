@@ -13,8 +13,7 @@ export default {
                 <span>({{assignments.length}})</span>
             </p>
             <assignment-tags 
-            @change="currentTag = $event"
-            :currentTag="currentTag"
+            v-model="currentTag"
             :initialTags="assignments.map(a => a.tag)" ></assignment-tags>
              <ul class="border border-gray-600 divide-y divide-gray-600 mt-6">
                 <assignment  v-for="assignment in filteredAssignments" :key="assignment.id" :assignment="assignment"></assignment>
