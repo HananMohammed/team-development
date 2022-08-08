@@ -7,7 +7,7 @@ export default {
         'AssignmentTags':AssignmentTags
     },
     template: `
-        <section v-show="assignments.length" class="w-80">
+        <section v-show="assignments.length" class="w-100 bg-gray-700 p-4 border border-gray-600 rounded-lg">
             <div class="flex justify-between items-start">
                 <p class="font-bold mb-2">
                     {{title}}
