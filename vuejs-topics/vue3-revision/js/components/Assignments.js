@@ -8,15 +8,23 @@ export default {
         AssignmentCreate
     },
     template: `
-        <div class="space-y-8"> 
-            <assignment-list v-if="filers.inProgress" :assignments="filers.inProgress" title="In progress"></assignment-list>
-            <assignment-list v-if="filers.completed"  :assignments = "filers.completed" title = "Completed"></assignment-list>
-            <assignment-create @add="add"></assignment-create>
+        <div class="flex gap-8"> 
+            <assignment-list v-if="filers.inProgress" :assignments="filers.inProgress" title="In progress">
+                <assignment-create @add="add"></assignment-create>
+            </assignment-list>
+            <assignment-list
+               v-if="showCompleted" 
+               :assignments = "filers.completed" 
+               @toggle = "showCompleted = !showCompleted"
+               title = "Completed" can-hide>
+                          
+            </assignment-list>
         </div>
     `,
     data() {
         return {
             assignments: [],
+            showCompleted : true
         }
     },
     methods: {
