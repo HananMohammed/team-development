@@ -1,13 +1,15 @@
 import Assignment from "./Assignment.js";
 import AssignmentTags from "./AssignmentTags.js";
+import Panel from "./Panel.js";
 
 export default {
-    components: {
-        'assignment': Assignment,
-        'AssignmentTags':AssignmentTags
-    },
-    template: `
-        <section v-show="assignments.length" class="w-100 bg-gray-700 p-4 border border-gray-600 rounded-lg">
+  components: {
+    assignment: Assignment,
+    AssignmentTags: AssignmentTags,
+    panel: Panel,
+  },
+  template: `
+        <panel v-show="assignments.length" class="w-100 bg-gray-700 p-4 border border-gray-600 rounded-lg">
             <div class="flex justify-between items-start">
                 <p class="font-bold mb-2">
                     {{title}}
@@ -23,26 +25,28 @@ export default {
                 <assignment  v-for="assignment in filteredAssignments" :key="assignment.id" :assignment="assignment"></assignment>
             </ul>
             <slot></slot>
-        </section>
+            <template #footer>
+                footer goos here
+            </template>
+        </panel>
 
     `,
-    props: {
-        assignments: Array,
-        title: String,
-        canHide:{type:Boolean, default:false}
+  props: {
+    assignments: Array,
+    title: String,
+    canHide: { type: Boolean, default: false },
+  },
+  data() {
+    return {
+      currentTag: "all",
+    };
+  },
+  computed: {
+    filteredAssignments() {
+      if (this.currentTag == "all") {
+        return this.assignments;
+      }
+      return this.assignments.filter((a) => a.tag === this.currentTag);
     },
-    data(){
-        return{
-            currentTag:'all',
-        }
-    },
-    computed: {
-        filteredAssignments(){
-            if (this.currentTag == 'all'){
-                return this.assignments
-            }
-            return this.assignments.filter(a => a.tag === this.currentTag)
-        },
-    }
-
-}
+  },
+};

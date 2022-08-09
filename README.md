@@ -39,5 +39,6 @@ We are Backend Developers Seeks to Develop our selves in new and advanced topics
 - Section2: Vue Components
 - Section3: Event Handling
 - Section4: Beynod the basics
+- Section5: Vite
 
 ## Problem Solving Topics
