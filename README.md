@@ -42,3 +42,6 @@ We are Backend Developers Seeks to Develop our selves in new and advanced topics
 - Section5: Vite
 
 ## Problem Solving Topics
+### leetcode
+- <a href="https://leetcode.com/problems/two-sum/"> Two Sum </a>
+
