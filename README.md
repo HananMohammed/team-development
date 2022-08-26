@@ -51,3 +51,4 @@ We are Backend Developers Seeks to Develop our selves in new and advanced topics
 - <a href="https://leetcode.com/problems/longest-common-prefix/">  Longest Common Prefix</a>
 - <a href="https://leetcode.com/problems/merge-two-sorted-lists/">Merge Two Sorted Lists</a>
 - <a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/"> Remove Duplicates from Sorted Array </a>
+- <a href="https://leetcode.com/problems/remove-element/">  Remove Element </a>
