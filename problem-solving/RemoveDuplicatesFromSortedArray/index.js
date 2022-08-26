@@ -16,14 +16,14 @@ Do not allocate extra space for another array. You must do this by modifying the
  * @param {number[]} nums
  * @return {number}
  */
-var removeDuplicates = function(nums) {
-  let stack = [];
+var removeDuplicates = function (nums) {
+  let numsLength = nums.length;
   for (let i = 0; i < nums.length; i++) {
-    if(!stack.includes(nums[i])){
-      stack.push(nums[i])
+    if (nums[i] === nums[i + 1]) {
+      nums.splice(i,1);
+      i--;
     }
   }
- 
-    return stack;
+  return nums;
 };
-removeDuplicates([1,1,2])
+removeDuplicates([1, 1, 2]);
