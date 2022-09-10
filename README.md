@@ -55,4 +55,5 @@ We are Backend Developers Seeks to Develop our selves in new and advanced topics
 - <a href="https://leetcode.com/problems/search-insert-position/">  Search Insert Position </a>
 - <a href="https://leetcode.com/problems/length-of-last-word/">   Length of Last Word </a>
 - <a href="https://leetcode.com/problems/plus-one/"> PLUS ONE </a>
+- <a href="https://leetcode.com/problems/add-binary/"> Add Binary </a>
 
