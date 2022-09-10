@@ -31,11 +31,10 @@ function reverseString(str) {
     }
   }
   
-  let result = [], carryOver = 0, sum='';
+  let carryOver = 0, sum='';
  
   for (let i = a.length-1 ; i >=0 ; i--) {
-    let lastSum = parseInt(a.at(i)|| 0) + parseInt(b.at(i) || 0) +carryOver;
-   // console.log(lastSum);
+    let lastSum = parseInt(a.at(i)) + parseInt(b.at(i)) +carryOver;
     if(lastSum === 2){
       lastSum = 0;
       carryOver = 1
