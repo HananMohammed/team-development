@@ -1,22 +1,32 @@
 /*
                                         The Problem
 
-Given a string s consisting of words and spaces, return the length of the last word in the string.
+You are climbing a staircase. It takes n steps to reach the top.
 
-A word is a maximal substring consisting of non-space characters only.
-
+Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
 */
 
 /**
- * @param {string} s
+ * @param {number} n
  * @return {number}
  */
- var lengthOfLastWord = function(s) {
-  var words = s.split(" ");
-  const result = words.filter(word => word != "");
-  console.log(result);
-  var lastword = result[result.length-1]
-  console.log(lastword.length);
-  return lastword.length;
+var climbStairs = function (n) {
+    if (n === 1 || n === 2) {
+        return n;
+    } else {
+        let waysToclimb1 = 1;
+        let waysToclimb2 = 2;
+        let waysToclimb;
+        let i = 1;
+
+        while (n - 1 > i) {
+            waysToclimb = waysToclimb2 + waysToclimb1;
+            waysToclimb1 = waysToclimb2;
+            waysToclimb2 = waysToclimb;
+            i++;
+        }
+        return waysToclimb;
+    }
 };
-lengthOfLastWord("   fly me   to   the moon  ")
+
+console.log(climbStairs(5))
