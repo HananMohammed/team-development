@@ -41,6 +41,7 @@ We are Backend Developers Seeks to Develop our selves in new and advanced topics
 - Section4: Beynod the basics
 - Section5: Vite
 - Section6: The Composition API
+- Section7: Managing States
 
 ## Problem Solving Topics
 ### leetcode

@@ -1,6 +1,5 @@
 <template>
     <div>
- 
         <textarea @keyup="update" style="width: 100%;height: inherit;" v-text="modelValue" @keydown.tab.prevent="onTabPress"></textarea> 
     </div>
 </template>
