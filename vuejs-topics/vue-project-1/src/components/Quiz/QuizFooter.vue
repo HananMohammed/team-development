@@ -1,13 +1,12 @@
 <script setup>
-import {inject} from "vue";
-defineProps({quiz: Object})
-let {name, changeName} = inject('name')
-
+import {state} from '@/stores/quizStore'
 
 </script>
 <template>
   <div>
-    <button @click.prevent = "changeName">{{ name }}</button>
+    <h6>Quiz Footer</h6>
+    <h5 >{{ state.name }}</h5>
+    <button @click.prevent="state.name = 'A new Quiz Name'"> Change Quiz Name</button>
     <ul>
       <li><a href="#" >Get A job</a> </li>
       <li><a href="#" >Contact Us</a> </li>
