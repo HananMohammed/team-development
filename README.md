@@ -42,6 +42,8 @@ We are Backend Developers Seeks to Develop our selves in new and advanced topics
 - Section5: Vite
 - Section6: The Composition API
 - Section7: Managing States
+- Section8: Team Dashboard Exercise
+- Section9: Transition, Teleport, Tips
 
 ## Problem Solving Topics
 ### leetcode
